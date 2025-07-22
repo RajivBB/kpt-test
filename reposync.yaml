@@ -1,0 +1,13 @@
+# repo-sync.yaml
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  namespace: dev-team
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: https://github.com/RajivBB/kpt-test.git
+    branch: main
+    dir: namespaces/nginx
+    auth: none  # or "token" or "ssh"
