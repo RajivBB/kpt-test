@@ -1,0 +1,63 @@
+#cat reposync-dev-basic.yaml 
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: reposync-dev
+  namespace: dev-team
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: https://github.com/rajivbb/kpt-test.git
+    branch: main
+    dir: dev-team
+    auth: token
+    secretRef:
+      name: git-creds
+---
+#apiVersion: rbac.authorization.k8s.io/v1
+#kind: RoleBinding
+#metadata:
+#  name: repo-sync-rolebinding
+#  namespace: dev-team
+#roleRef:
+#  apiGroup: rbac.authorization.k8s.io
+#  kind: Role
+#  name: repo-sync-role
+#subjects:
+#kind: ServiceAccount
+#  name: ns-reconciler-dev-team-reposync-dev-12
+#  namespace: config-management-system
+---
+#apiVersion: rbac.authorization.k8s.io/v1
+#kind: Role
+#metadata:
+#  name: repo-sync-role
+#  namespace: dev-team
+#rules:
+#apiGroups:
+#  - apps
+#  resources:
+#  - deployments
+#  verbs:
+#  - get
+#  - list
+#  - watch
+#  - create
+#  - update
+#  - patch
+#  - delete
+#apiGroups:
+#  - ""
+#  resources:
+#  - configmaps
+#  - secrets
+#  - services
+#  - pods
+#  verbs:
+#  - get
+#  - list
+#  - watch
+#  - create
+#  - update
+#  - patch
+#  - delete
