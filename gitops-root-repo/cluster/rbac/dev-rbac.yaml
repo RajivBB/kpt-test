@@ -1,13 +1,25 @@
+# prod-team-rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: prod-team-reconciler-role
+  namespace: prod-team
+rules:
+  - apiGroups: ["", "apps", "batch"]
+    resources: ["services", "pods", "deployments", "replicasets", "configmaps"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: prod-reposync
+  name: prod-team-reconciler-rolebinding
   namespace: prod-team
 subjects:
-- kind: ServiceAccount
-  name: ns-reconciler-prod-team
-  namespace: config-management-system
+  - kind: ServiceAccount
+    name: ns-reconciler-prod-team-reposync-prod-13
+    namespace: config-management-system
 roleRef:
-  kind: ClusterRole
-  name: admin
+  kind: Role
+  name: prod-team-reconciler-role
   apiGroup: rbac.authorization.k8s.io
