@@ -1,0 +1,15 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: reposync-dev
+  namespace: dev-team
+spec:
+  sourceFormat: hierarchical
+  git:
+    repo: https://github.com/RajivBB/kpt-test.git
+    revision: main
+    branch: main
+    dir: gitops-root-repo/namespaces/dev-team/workload
+    auth: token
+    secretRef:
+      name: git-creds
