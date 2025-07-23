@@ -1,8 +1,8 @@
 apiVersion: configsync.gke.io/v1beta1
 kind: RepoSync
 metadata:
-  name: reposync-dev
-  namespace: dev-team
+  name: reposync-prod
+  namespace: prod-team
 spec:
   sourceFormat: hierarchical
   git:
