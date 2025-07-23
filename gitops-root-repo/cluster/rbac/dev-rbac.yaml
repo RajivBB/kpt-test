@@ -1,11 +1,11 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: dev-reposync
-  namespace: dev-team
+  name: prod-reposync
+  namespace: prod-team
 subjects:
 - kind: ServiceAccount
-  name: ns-reconciler-dev-team
+  name: ns-reconciler-prod-team
   namespace: config-management-system
 roleRef:
   kind: ClusterRole

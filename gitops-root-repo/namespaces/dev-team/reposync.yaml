@@ -7,7 +7,6 @@ spec:
   sourceFormat: hierarchical
   git:
     repo: https://github.com/RajivBB/kpt-test.git
-    revision: main
     branch: main
     dir: gitops-root-repo/namespaces/dev-team/workload
     auth: token
