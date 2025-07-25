@@ -1,8 +1,11 @@
-# Declare all resource folders and files
 resources:
-  - base/crds
-  - base/namespaces
-  - base/rbac
-  - platform/policies/templates
-  - platform/policies/constraints
+  # Base resources
+  - base/crds/some-crds.yaml
+  - base/namespaces/dev-team.yaml
+  - base/rbac/dev-rbac.yaml
 
+  # Policy templates
+  - platform/policies/templates/ns-must-have-owner-template.yaml
+
+  # Constraint using the template
+  - platform/policies/constraints/k8srequiredlabels.yaml
