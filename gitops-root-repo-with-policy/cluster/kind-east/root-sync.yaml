@@ -6,7 +6,7 @@ metadata:
 spec:
   sourceFormat: unstructured
   git:
-    repo: https://github.com/RajivBB/kpt-test.git
+    repo: git@github.com:RajivBB/kpt-test.git
     branch: main
     dir: gitops-root-repo-with-policy/cluster/kind-east/
     auth: ssh

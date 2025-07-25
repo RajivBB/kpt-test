@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-service
-  namespace: prod-team
+  namespace: dev-team
 spec:
   selector:
     app: nginx

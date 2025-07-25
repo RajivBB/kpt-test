@@ -1,12 +1,12 @@
-# resources:
+resources:
   # Policy templates
-  #  - platform/policies/templates/ns-must-have-owner-template.yaml
+  - platform/policies/templates/ns-must-have-owner-template.yaml
 
   # Constraint using the template
-  # - platform/policies/constraints/k8srequiredlabels.yaml
+  - platform/policies/constraints/k8srequiredlabels.yaml
 
   # Base resources
-  #- base/crds/some-crds.yaml
-  #- base/namespaces/dev-team.yaml
-  #- base/rbac/dev-rbac.yaml
+  - base/crds/some-crds.yaml
+  - base/namespaces/dev-team.yaml
+  - base/rbac/dev-rbac.yaml
 
