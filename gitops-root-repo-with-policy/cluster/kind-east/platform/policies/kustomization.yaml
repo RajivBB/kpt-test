@@ -1,0 +1,3 @@
+resources:
+  - templates/ns-must-have-owner-template.yaml
+  - constraints/k8srequiredlabels.yaml
