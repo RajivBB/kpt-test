@@ -1,0 +1,8 @@
+# Declare all resource folders and files
+resources:
+  - base/crds
+  - base/namespaces
+  - base/rbac
+  - platform/policies/templates
+  - platform/policies/constraints
+
