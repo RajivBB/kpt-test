@@ -2,13 +2,13 @@ apiVersion: configsync.gke.io/v1beta1
 kind: RepoSync
 metadata:
   name: reposync-prod
-  namespace: prod-team
+  namespace: dev-team
 spec:
   sourceFormat: unstructured
   git:
-    repo: https://github.com/RajivBB/kpt-test.git
+    repo: git@github.com:RajivBB/kpt-test.git
     branch: main
     dir: gitops-root-repo/namespaces/dev-team/workload
-    auth: token
+    auth: ssh
     secretRef:
       name: git-creds
